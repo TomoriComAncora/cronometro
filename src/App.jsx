@@ -34,7 +34,17 @@ class App extends Component {
     this.setState(state);
   }
 
-  limpar() {}
+  limpar() {
+    if (this.timer !== null) {
+      clearInterval(this.timer);
+      this.timer = null;
+    }
+
+    let state = this.state;
+    state.numero = 0;
+    state.btnVai = "Vai"
+    this.setState(state); 
+  }
 
   render() {
     return (
